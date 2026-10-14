@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="494" height="30" viewBox="0 0 494 30" role="img" aria-labelledby="title">
+  <title id="title">Next.js 15, React 19, TypeScript e PostgreSQL</title>
+  <g fill="#101211" stroke="#303530"><rect x=".5" y=".5" width="102" height="29" rx="5"/><rect x="110.5" y=".5" width="102" height="29" rx="5"/><rect x="220.5" y=".5" width="126" height="29" rx="5"/><rect x="354.5" y=".5" width="139" height="29" rx="5"/></g>
+  <g font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="600" text-anchor="middle"><text x="51" y="19" fill="#f2f4eb">Next.js 15</text><text x="161" y="19" fill="#61dafb">React 19</text><text x="283" y="19" fill="#a4c7fa">TypeScript</text><text x="424" y="19" fill="#a4cadf">PostgreSQL</text></g>
+</svg>

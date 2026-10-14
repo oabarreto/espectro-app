@@ -1,0 +1,15 @@
+import type {AvatarId} from './avatars';
+import type {Profile} from './classification';
+export const categories = ['Jogos','Filmes','Séries','Livros'] as const;
+export type Category = typeof categories[number];
+export type Work = {id:string;name:string;category:Category;detail:string;symbol:string;color:string};
+export type Question = {id:string;category:Category;text:string;options:string[]};
+export type ScoredQuestion = Question & {correct:number};
+export const durations = [3,5,8] as const;
+export type Duration = typeof durations[number];
+export const sessionPlans = {3:{works:12,questions:8},5:{works:20,questions:12},8:{works:28,questions:20}} as const;
+export type Quiz = {id:string;duration:Duration;works:Work[];questions:Question[]};
+export type AnswerFeedback={status:'correct'|'wrong'|'skipped';correctAnswer:string;answer:number};
+export type QuizSnapshot = Omit<Quiz,'id'|'questions'> & {questions:ScoredQuestion[];submitted?:Record<string,number>};
+export const levels = ['Não conheço','Já ouvi falar','Assisti / li / joguei','Conheço muito'];
+export type Result = {name:string;nerd:number;erudite:number;total:number;title:string;profile:Profile;subtype:string;avatar:AvatarId;correct:number;wrong?:number;skipped?:number;questionCount?:number;duration?:Duration;categories:{name:string;score:number}[]};
