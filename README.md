@@ -31,7 +31,7 @@ A experiência foi pensada para caber em uma pausa para o café:
 3. Responda a cartões de familiaridade e perguntas de múltipla escolha sobre jogos, filmes, séries e livros.
 4. Veja sua posição na matriz, descubra seu perfil e compare os pontos no ranking.
 
-O nome é opcional. As respostas são feitas por cliques ou toques, sem cadastro. O app lembra o último resultado naquele navegador e permite refazer o teste.
+O nome é opcional; também dá para sortear um nick com um toque, entre 576 combinações sem números. As respostas são feitas por cliques ou toques, sem cadastro. O app lembra o último resultado naquele navegador e permite refazer o teste.
 
 O catálogo inicial reúne **41 universos e 41 perguntas em português**, incluindo As Crônicas de Nárnia e Love, Death & Robots. As sessões sorteiam 20, 32 ou 48 etapas, com as quatro categorias equilibradas e alternativas embaralhadas. A duração é uma estimativa, sem cronômetro.
 
@@ -43,7 +43,7 @@ O catálogo inicial reúne **41 universos e 41 perguntas em português**, inclui
 - Favicon com o símbolo orbital da marca.
 - Catálogo persistido no Neon, com seleção de perguntas feita no servidor.
 - Sessões com gabarito reservado ao servidor e pontuação normalizada por duração.
-- Seis avatares para escolher, exibidos no resultado e no ranking.
+- Doze avatares para escolher ou sortear, exibidos no resultado, no ranking e no card.
 - Matriz com duas pontuações independentes, de 0 a 100.
 - Classificação com perfil e subtipo, como **Nerd — Curioso de carteirinha**.
 - Ranking ordenado por pontuação geral, nerd ou erudita.
