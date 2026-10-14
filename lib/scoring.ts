@@ -18,4 +18,4 @@ export function score(answers:number[],name:string,quiz:QuizSnapshot,avatar:Avat
  const erudite=Math.round(60*breadth+40*context);
  return {name,nerd,erudite,total:Math.round((nerd+erudite)/2),...classify(nerd,erudite),avatar,correct,wrong:quiz.questions.length-correct-skipped,skipped,questionCount:quiz.questions.length,duration:quiz.duration,categories:categoryScores};
 }
-export function nickname(id:string){const n=Number.parseInt(id.replaceAll('-','').slice(0,8),16);return `${['Capivara','Coruja','Raposa','Lontra','Pantera','Baleia','Arara','Lhama'][n%8]} ${['Cósmica','Galáctica','Estelar','Quântica','Lunar','Solar','Supersônica','Interdimensional'][Math.floor(n/8)%8]} · ${id.slice(-4).toUpperCase()}`}
+export {nickname} from './nicknames';

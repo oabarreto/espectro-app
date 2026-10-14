@@ -29,7 +29,7 @@ export async function POST(request:Request){
  if(payload.avatar!==undefined&&!isAvatar(payload.avatar))return NextResponse.json({error:'Escolha um dos avatares disponíveis.'},{status:400});
  const jar=await cookies();const stored=jar.get('espectro_id')?.value;
  const id=stored&&/^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i.test(stored)?stored:crypto.randomUUID();
- const name=payload.name?.trim()||nickname(id);const result=score(payload.answers,name,quiz,payload.avatar??defaultAvatar);const sql=await database();
+ const name=payload.name?.trim()||nickname(crypto.randomUUID());const result=score(payload.answers,name,quiz,payload.avatar??defaultAvatar);const sql=await database();
  if(sql)await sql`INSERT INTO espectro_results (id,name,total,result) VALUES (${id},${name},${result.total},${JSON.stringify(result)}::jsonb) ON CONFLICT(id) DO UPDATE SET name=EXCLUDED.name,total=EXCLUDED.total,result=EXCLUDED.result,updated_at=now()`;
  const response=NextResponse.json({result,shared:!!sql});response.cookies.set('espectro_id',id,{httpOnly:true,secure:process.env.NODE_ENV==='production',sameSite:'lax',maxAge:31536000,path:'/'});return response;
  }catch{return NextResponse.json({error:'Não foi possível salvar. Suas respostas estão aqui; tente novamente.'},{status:503})}
