@@ -47,7 +47,7 @@ O catálogo inicial reúne **41 universos e 41 perguntas em português**, inclui
 - Matriz com duas pontuações independentes, de 0 a 100.
 - Classificação com perfil e subtipo, como **Nerd — Curioso de carteirinha**.
 - Ranking ordenado por pontuação geral, nerd ou erudita.
-- Compartilhamento do resultado pelo recurso do dispositivo ou pela cópia do texto.
+- Card de resultado em PNG, com avatar, perfil, matriz, resumo do desafio e posição no ranking. Compartilhe pelo dispositivo ou baixe a imagem para enviar nas redes.
 - Interface responsiva, foco visível para navegação por teclado e animações que respeitam a preferência por movimento reduzido.
 
 ## Como o perfil é definido

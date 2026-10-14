@@ -7,7 +7,16 @@ import {getSession} from '@/lib/quiz-store';
 import { nickname, score, validateAnswers } from '@/lib/scoring';
 export const dynamic='force-dynamic';
 async function database(){if(!process.env.DATABASE_URL)return null;const sql=neon(process.env.DATABASE_URL);await sql`CREATE TABLE IF NOT EXISTS espectro_results (id UUID PRIMARY KEY, name TEXT NOT NULL, total INTEGER NOT NULL, result JSONB NOT NULL, updated_at TIMESTAMPTZ NOT NULL DEFAULT now())`;return sql}
-export async function GET(){try{const sql=await database();const rows=sql?await sql`SELECT result FROM espectro_results ORDER BY total DESC, updated_at ASC LIMIT 100`:[];return NextResponse.json({shared:!!sql,entries:rows.map(r=>({...r.result,...classify(r.result.nerd,r.result.erudite),avatar:isAvatar(r.result.avatar)?r.result.avatar:defaultAvatar}))},{headers:{'Cache-Control':'no-store'}})}catch{return NextResponse.json({error:'Não foi possível carregar o ranking. Tente novamente.'},{status:503})}}
+export async function GET(){try{
+ const sql=await database();const stored=(await cookies()).get('espectro_id')?.value;
+ const validId=stored&&/^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i.test(stored);
+ const [rows,currentRows]=sql?await Promise.all([
+  sql`SELECT result FROM espectro_results ORDER BY total DESC, updated_at ASC, id ASC LIMIT 100`,
+  validId?sql`SELECT result, position FROM (SELECT id,result,row_number() OVER (ORDER BY total DESC,updated_at ASC,id ASC) AS position FROM espectro_results) ranked WHERE id=${stored}::uuid`:Promise.resolve([])
+ ]):[[],[]];
+ const current=currentRows[0];
+ return NextResponse.json({shared:!!sql,entries:rows.map(r=>({...r.result,...classify(r.result.nerd,r.result.erudite),avatar:isAvatar(r.result.avatar)?r.result.avatar:defaultAvatar})),current:current?{result:current.result,position:Number(current.position)}:null},{headers:{'Cache-Control':'private, no-store'}})
+}catch{return NextResponse.json({error:'Não foi possível carregar o ranking. Tente novamente.'},{status:503})}}
 export async function POST(request:Request){
  const origin=request.headers.get('origin');if(origin&&new URL(origin).host!==request.headers.get('host'))return NextResponse.json({error:'Origem inválida'},{status:403});
  try{const raw=await request.text();if(raw.length>8192)return NextResponse.json({error:'Envio muito grande'},{status:413});

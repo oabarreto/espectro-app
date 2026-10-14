@@ -6,7 +6,7 @@
     "dev": "next dev --hostname 127.0.0.1",
     "build": "next build",
     "start": "next start --hostname 127.0.0.1",
-    "test": "node --import tsx --test lib/scoring.test.ts"
+    "test": "node --import tsx --test lib/scoring.test.ts lib/share-card.test.ts"
   },
   "dependencies": {
     "@neondatabase/serverless": "^1.0.0",
