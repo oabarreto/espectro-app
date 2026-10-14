@@ -5,6 +5,12 @@ export const avatars = [
   {id:'rocket',name:'Foguete',color:'#efbe94'},
   {id:'bird',name:'Pássaro',color:'#a9d8bb'},
   {id:'rabbit',name:'Coelho',color:'#efb6c9'},
+  {id:'dog',name:'Cachorro',color:'#eac69b'},
+  {id:'fish',name:'Peixe',color:'#9fdce7'},
+  {id:'turtle',name:'Tartaruga',color:'#b3d98f'},
+  {id:'squirrel',name:'Esquilo',color:'#e8ad8e'},
+  {id:'snail',name:'Caracol',color:'#d2b3ed'},
+  {id:'bug',name:'Inseto',color:'#efcc8e'},
 ] as const;
 export type AvatarId = typeof avatars[number]['id'];
 export const defaultAvatar:AvatarId='robot';
