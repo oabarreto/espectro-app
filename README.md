@@ -8,7 +8,7 @@ Um quiz de cultura pop que transforma repertório em coordenadas.
 
 ![Next.js 15, React 19, TypeScript e PostgreSQL](docs/assets/stack.svg)
 
-[O projeto](#de-uma-conversa-no-trabalho-a-um-projeto) · [Experiência](#como-é-usar) · [Decisões técnicas](#por-trás-da-experiência) · [Rodar localmente](#experimente)
+[**Acessar o Espectro**](https://espectro-app.vercel.app/) · [O projeto](#de-uma-conversa-no-trabalho-a-um-projeto) · [Experiência](#como-é-usar) · [Decisões técnicas](#por-trás-da-experiência) · [Rodar localmente](#experimente)
 
 </div>
 
