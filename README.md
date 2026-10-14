@@ -6,6 +6,8 @@
 
 Um quiz de cultura pop que transforma repertório em coordenadas.
 
+**Versão atual: 1.1.0** · cards de resultado, compartilhamento pelo ranking e sorteios de nick e avatar.
+
 ![Next.js 15, React 19, TypeScript e PostgreSQL](docs/assets/stack.svg)
 
 [**Acessar o Espectro**](https://espectro-app.vercel.app/) · [O projeto](#de-uma-conversa-no-trabalho-a-um-projeto) · [Experiência](#como-é-usar) · [Decisões técnicas](#por-trás-da-experiência) · [Rodar localmente](#experimente)
