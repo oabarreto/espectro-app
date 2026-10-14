@@ -14,7 +14,7 @@ Um quiz de cultura pop que transforma repertório em coordenadas.
 
 </div>
 
-![Tela inicial do Espectro, com seleção de avatar e a matriz de perfis nerd e erudito](docs/assets/espectro-home.jpg)
+![Espectro v1.1.0, com sorteio de nick, 12 avatares e sessões de 3, 5 ou 8 minutos](docs/assets/espectro-home-v1.1.jpg)
 
 ## De uma conversa no trabalho a um projeto
 
